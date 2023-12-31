@@ -32,8 +32,8 @@ addmotd() {
 updrepos() {
 	cp ${PREFIX}/share/TermuxAlpine/etc/apk/repositories ${PREFIX}/share/TermuxAlpine/etc/apk/repositories.bak
 	cat > ${PREFIX}/share/TermuxAlpine/etc/apk/repositories <<- EOM
-	http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/
-	http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/
+	http://dl-cdn.alpinelinux.org/alpine/v3.15/main/
+	http://dl-cdn.alpinelinux.org/alpine/v3.15/community/
 	http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 	EOM
 }
