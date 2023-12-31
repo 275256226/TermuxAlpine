@@ -90,11 +90,11 @@ checkdeps() {
 # URLs of all possibls architectures
 
 seturl() {
-	ALPINE_VER=$(curl -s http://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$SETARCH/latest-releases.yaml | grep -m 1 -o version.* | sed -e 's/[^0-9.]*//g' -e 's/-$//')
+	ALPINE_VER=$(curl -s https://mirrors.aliyun.com/alpine/v3.15/releases/$SETARCH/latest-releases.yaml | grep -m 1 -o version.* | sed -e 's/[^0-9.]*//g' -e 's/-$//')
 	if [ -z "$ALPINE_VER" ] ; then
 		exit 1
 	fi
-	ALPINE_URL="http://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$SETARCH/alpine-minirootfs-$ALPINE_VER-$SETARCH.tar.gz"
+	ALPINE_URL="https://mirrors.aliyun.com/alpine/v3.15/releases/$SETARCH/alpine-minirootfs-$ALPINE_VER-$SETARCH.tar.gz"
 }
 
 # Utility function to get tar file
@@ -157,7 +157,7 @@ EOM
 # Utility function to touchup Alpine
 
 finalwork() {
-	[ ! -e ${DESTINATION}/finaltouchup.sh ] && curl --silent -LO https://raw.githubusercontent.com/275256226/TermuxAlpine/master/finaltouchup.sh
+	[ ! -e ${DESTINATION}/finaltouchup.sh ] && curl --silent -LO https://mirror.ghproxy.com/raw.githubusercontent.com/275256226/TermuxAlpine/master/finaltouchup.sh
 	if [ "${MOTD}" = "ON" ]; then
 		bash ${DESTINATION}/finaltouchup.sh --add-motd
 	else
