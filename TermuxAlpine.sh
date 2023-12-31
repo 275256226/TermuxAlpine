@@ -90,11 +90,11 @@ checkdeps() {
 # URLs of all possibls architectures
 
 seturl() {
-	ALPINE_VER=$(curl -s http://dl-cdn.alpinelinux.org/alpine/v3.15/releases/$SETARCH/latest-releases.yaml | grep -m 1 -o version.* | sed -e 's/[^0-9.]*//g' -e 's/-$//')
+	ALPINE_VER=$(curl -s http://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$SETARCH/latest-releases.yaml | grep -m 1 -o version.* | sed -e 's/[^0-9.]*//g' -e 's/-$//')
 	if [ -z "$ALPINE_VER" ] ; then
 		exit 1
 	fi
-	ALPINE_URL="http://dl-cdn.alpinelinux.org/alpine/v3.15/releases/$SETARCH/alpine-minirootfs-$ALPINE_VER-$SETARCH.tar.gz"
+	ALPINE_URL="http://dl-cdn.alpinelinux.org/alpine/v3.18/releases/$SETARCH/alpine-minirootfs-$ALPINE_VER-$SETARCH.tar.gz"
 }
 
 # Utility function to get tar file
