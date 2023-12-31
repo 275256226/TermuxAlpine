@@ -32,9 +32,7 @@ addmotd() {
 updrepos() {
 	cp ${PREFIX}/share/TermuxAlpine/etc/apk/repositories ${PREFIX}/share/TermuxAlpine/etc/apk/repositories.bak
 	cat > ${PREFIX}/share/TermuxAlpine/etc/apk/repositories <<- EOM
-	http://dl-cdn.alpinelinux.org/alpine/v3.18/main/
-	http://dl-cdn.alpinelinux.org/alpine/v3.18/community/
-	http://dl-cdn.alpinelinux.org/alpine/edge/testing/
+	https://mirrors.aliyun.com/alpine/v3.15/main/
 	EOM
 }
 # thnx to @j16180339887 for DNS picker 
